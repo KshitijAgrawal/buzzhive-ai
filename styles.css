@@ -261,7 +261,7 @@ section {
 
 .carousel-container {
     position: relative;
-    max-width: 800px;
+    max-width: 500px;
     margin: 3rem auto 0;
 }
 
@@ -269,22 +269,24 @@ section {
     overflow: hidden;
     border-radius: 16px;
     position: relative;
+    width: 100%;
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
 }
 
 .carousel-slide {
-    min-width: 100%;
-    display: flex;
+    width: 100%;
+    display: none;
     flex-direction: column;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-slide.active {
+    display: flex;
     opacity: 1;
 }
 
@@ -295,14 +297,20 @@ section {
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     background: white;
     padding: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .showcase-image {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 400px;
     display: block;
     border-radius: 12px;
-    max-width: 100%;
+    object-fit: contain;
 }
 
 .showcase-content {
@@ -564,6 +572,10 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .carousel-container {
+        max-width: 90%;
+    }
+    
     .carousel-btn {
         width: 40px;
         height: 40px;
@@ -576,6 +588,10 @@ section {
     
     .carousel-btn-next {
         right: 10px;
+    }
+    
+    .showcase-image {
+        max-height: 300px;
     }
     
     .showcase-content {
