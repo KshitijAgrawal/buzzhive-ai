@@ -261,7 +261,7 @@ section {
 
 .carousel-container {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 3rem auto 0;
 }
 
@@ -307,7 +307,7 @@ section {
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 600px;
+    max-height: 700px;
     display: block;
     border-radius: 12px;
     object-fit: contain;
