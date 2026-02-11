@@ -63,9 +63,9 @@ body {
 }
 
 .logo-hive {
-    height: 40px;
+    height: 60px;
     width: auto;
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .nav-menu {
@@ -244,6 +244,59 @@ section {
     line-height: 1.8;
 }
 
+/* Showcase Section */
+.showcase {
+    background-color: var(--bg-color);
+    padding: 80px 20px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.showcase-item {
+    text-align: center;
+}
+
+.showcase-image-container {
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    background: white;
+    padding: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.showcase-image-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+.showcase-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.showcase-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.showcase-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
@@ -419,6 +472,11 @@ section {
 
     .benefits-grid {
         grid-template-columns: 1fr;
+    }
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .footer-content {

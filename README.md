@@ -87,10 +87,16 @@ Value: YOUR_USERNAME.github.io
 TTL: 3600
 ```
 
-### 6. Add Logo Asset
+### 6. Add Assets
 
 1. Copy `apps/mobile/assets/buzz-logo.png` to `website/assets/buzz-logo.png`
-2. Or replace the logo path in all HTML files if you use a different location
+2. The `buzz-hive-removed-background.png` should already be in `website/assets/`
+3. Add your app screenshots to `website/assets/` with these names:
+   - `screenshot-diary.png` - Diary/journal feature
+   - `screenshot-explore.png` - Map/Explore feature
+   - `screenshot-hive.png` - Hive page with buzzes
+   - `screenshot-ask.png` - Ask AI agent feature
+4. Or update the image filenames in `index.html` if you use different names
 
 ### 7. Update App Store Link
 
@@ -107,7 +113,12 @@ website/
 ├── dmca.html           # DMCA Policy
 ├── styles.css          # Shared stylesheet
 ├── assets/             # Images and other assets
-│   └── buzz-logo.png   # Logo (copy from apps/mobile/assets/)
+│   ├── buzz-logo.png   # Logo (copy from apps/mobile/assets/)
+│   ├── buzz-hive-removed-background.png  # Hive icon (already there)
+│   ├── screenshot-diary.png    # Diary feature screenshot
+│   ├── screenshot-explore.png  # Map/Explore feature screenshot
+│   ├── screenshot-hive.png     # Hive page screenshot
+│   └── screenshot-ask.png     # Ask AI feature screenshot
 └── README.md           # This file
 ```
 
