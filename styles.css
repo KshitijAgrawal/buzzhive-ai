@@ -49,12 +49,18 @@ body {
 
 .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
-    font-size: 1.25rem;
+}
+
+.logo-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo-img {
@@ -62,10 +68,13 @@ body {
     width: auto;
 }
 
+.logo-text {
+    font-size: 1.25rem;
+}
+
 .logo-hive {
-    height: 60px;
+    height: 50px;
     width: auto;
-    margin-left: 12px;
 }
 
 .nav-menu {
@@ -250,30 +259,42 @@ section {
     padding: 80px 20px;
 }
 
-.showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 0;
 }
 
-.showcase-item {
-    text-align: center;
+.carousel-wrapper {
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
 }
 
 .showcase-image-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     background: white;
     padding: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.showcase-image-container:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
 }
 
 .showcase-image {
@@ -284,17 +305,86 @@ section {
     max-width: 100%;
 }
 
-.showcase-item h3 {
-    font-size: 1.5rem;
+.showcase-content {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.showcase-content h3 {
+    font-size: 1.75rem;
     margin-bottom: 1rem;
     color: var(--text-color);
     font-weight: 700;
 }
 
-.showcase-item p {
+.showcase-content p {
     color: var(--text-light);
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.carousel-btn-prev {
+    left: -25px;
+}
+
+.carousel-btn-next {
+    right: -25px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background: var(--primary-color);
+    opacity: 0.7;
 }
 
 /* CTA Section */
@@ -474,9 +564,30 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .carousel-btn-prev {
+        left: 10px;
+    }
+    
+    .carousel-btn-next {
+        right: 10px;
+    }
+    
+    .showcase-content {
+        padding: 0 10px;
+    }
+    
+    .showcase-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .showcase-content p {
+        font-size: 1rem;
     }
 
     .footer-content {

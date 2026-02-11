@@ -10,9 +10,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="assets/buzz-logo.png" alt="BuzzHive Logo" class="logo-img">
+                <div class="logo-top">
+                    <img src="assets/buzz-logo.png" alt="BuzzHive Logo" class="logo-img">
+                    <span class="logo-text">BuzzHive AI</span>
+                </div>
                 <img src="assets/buzz-hive-removed-background.png" alt="BuzzHive" class="logo-hive">
-                <span class="logo-text">BuzzHive AI</span>
             </a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -91,37 +93,57 @@
                 <h2 class="section-title">See BuzzHive in Action</h2>
                 <p class="section-subtitle">Experience how AI-powered local communities work</p>
                 
-                <div class="showcase-grid">
-                    <div class="showcase-item">
-                        <div class="showcase-image-container">
-                            <img src="assets/screenshot-diary.png" alt="Dear Diary - Personal Journal" class="showcase-image">
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">‹</button>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="showcase-image-container">
+                                    <img src="assets/screenshot-diary.png" alt="Dear Diary - Personal Journal" class="showcase-image">
+                                </div>
+                                <div class="showcase-content">
+                                    <h3>Dear Diary</h3>
+                                    <p>Keep your personal thoughts safe and organized. Use quick templates like "Today I learnt", "I feel good today", or "I feel down" to capture your moments.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="showcase-image-container">
+                                    <img src="assets/screenshot-explore.png" alt="Explore Local Hives on Map" class="showcase-image">
+                                </div>
+                                <div class="showcase-content">
+                                    <h3>Explore Local Hives</h3>
+                                    <p>Discover nearby hives on an interactive map. See local buzz, community updates, and connect with neighbors in your area. Search for new locations and explore what's happening around you.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="showcase-image-container">
+                                    <img src="assets/screenshot-hive.png" alt="Hive Page with Buzzes and Alerts" class="showcase-image">
+                                </div>
+                                <div class="showcase-content">
+                                    <h3>Join Hive Conversations</h3>
+                                    <p>Participate in location-specific hives. Share buzzes, ask questions, and get instant AI-powered answers. Post photos, share updates, and stay connected with your local community.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="showcase-image-container">
+                                    <img src="assets/screenshot-ask.png" alt="Ask Local Hives AI Agent" class="showcase-image">
+                                </div>
+                                <div class="showcase-content">
+                                    <h3>Ask Local AI Agents</h3>
+                                    <p>Get instant answers from AI agents that understand your local area. Ask about restaurants, events, recommendations, or anything happening nearby. The agents learn from community buzzes to provide accurate, location-aware responses.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Dear Diary</h3>
-                        <p>Keep your personal thoughts safe and organized. Use quick templates like "Today I learnt", "I feel good today", or "I feel down" to capture your moments.</p>
                     </div>
-                    
-                    <div class="showcase-item">
-                        <div class="showcase-image-container">
-                            <img src="assets/screenshot-explore.png" alt="Explore Local Hives on Map" class="showcase-image">
-                        </div>
-                        <h3>Explore Local Hives</h3>
-                        <p>Discover nearby hives on an interactive map. See local buzz, community updates, and connect with neighbors in your area. Search for new locations and explore what's happening around you.</p>
-                    </div>
-                    
-                    <div class="showcase-item">
-                        <div class="showcase-image-container">
-                            <img src="assets/screenshot-hive.png" alt="Hive Page with Buzzes and Alerts" class="showcase-image">
-                        </div>
-                        <h3>Join Hive Conversations</h3>
-                        <p>Participate in location-specific hives. Share buzzes, ask questions, and get instant AI-powered answers. Post photos, share updates, and stay connected with your local community.</p>
-                    </div>
-                    
-                    <div class="showcase-item">
-                        <div class="showcase-image-container">
-                            <img src="assets/screenshot-ask.png" alt="Ask Local Hives AI Agent" class="showcase-image">
-                        </div>
-                        <h3>Ask Local AI Agents</h3>
-                        <p>Get instant answers from AI agents that understand your local area. Ask about restaurants, events, recommendations, or anything happening nearby. The agents learn from community buzzes to provide accurate, location-aware responses.</p>
+                    <button class="carousel-btn carousel-btn-next" aria-label="Next slide">›</button>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" aria-label="Slide 1" data-slide="0"></button>
+                        <button class="carousel-dot" aria-label="Slide 2" data-slide="1"></button>
+                        <button class="carousel-dot" aria-label="Slide 3" data-slide="2"></button>
+                        <button class="carousel-dot" aria-label="Slide 4" data-slide="3"></button>
                     </div>
                 </div>
             </div>
@@ -165,6 +187,65 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Carousel functionality
+        const carouselTrack = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-btn-prev');
+        const nextBtn = document.querySelector('.carousel-btn-next');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            // Update slides
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Move track
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Auto-play (optional - uncomment if desired)
+        // setInterval(nextSlide, 5000);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
 </body>
 </html>
 
