@@ -7,7 +7,7 @@ This is a static website for BuzzHive AI, ready to be deployed on GitHub Pages.
 ### 1. Create a GitHub Repository
 
 1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it something like `buzzhive-website` or `buzz-hive-com`
+2. Name it `buzzhive-ai` (or your preferred name)
 3. Make it public (required for free GitHub Pages)
 
 ### 2. Upload Files
@@ -35,7 +35,7 @@ You can either:
 2. Click **Settings** → **Pages**
 3. Under "Source", select **main** branch and **/ (root)** folder
 4. Click **Save**
-5. Your site will be available at: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+5. Your site will be available at: `https://YOUR_USERNAME.github.io/buzzhive-ai/`
 
 ### 4. Add Custom Domain (buzz-hive.com)
 
