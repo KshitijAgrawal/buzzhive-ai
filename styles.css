@@ -296,7 +296,7 @@ section {
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     background: white;
-    padding: 8px;
+    padding: 4px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -307,7 +307,7 @@ section {
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 600px;
     display: block;
     border-radius: 12px;
     object-fit: contain;
@@ -573,7 +573,7 @@ section {
     }
 
     .carousel-container {
-        max-width: 90%;
+        max-width: 95%;
     }
     
     .carousel-btn {
@@ -591,7 +591,7 @@ section {
     }
     
     .showcase-image {
-        max-height: 300px;
+        max-height: 500px;
     }
     
     .showcase-content {
