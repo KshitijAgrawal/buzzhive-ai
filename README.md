@@ -101,7 +101,7 @@ TTL: 3600
 ### 7. Update App Store Link
 
 In `index.html`, update the App Store link:
-- Replace `https://apps.apple.com/app/buzzhive` with your actual App Store URL
+- The TestFlight beta link is already set: `https://testflight.apple.com/join/y9kC6u3b`
 
 ## File Structure
 
