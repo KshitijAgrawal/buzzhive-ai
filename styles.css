@@ -72,11 +72,6 @@ body {
     font-size: 1.25rem;
 }
 
-.logo-hive {
-    height: 50px;
-    width: auto;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
