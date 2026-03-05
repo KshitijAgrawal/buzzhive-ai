@@ -129,8 +129,13 @@ body {
     order: 1;
 }
 
-.hero-cta .btn {
+.hero-cta .btn,
+.hero-cta .app-store-badge {
     order: 2;
+}
+
+.app-store-badge {
+    display: inline-block;
 }
 
 .cta-section .container {
@@ -145,7 +150,8 @@ body {
     order: 1;
 }
 
-.cta-section .btn {
+.cta-section .btn,
+.cta-section .app-store-badge {
     order: 2;
 }
 
