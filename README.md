@@ -103,7 +103,7 @@ TTL: 3600
 In `index.html`, the iOS download link is set to:
 - **App Store**: `https://apps.apple.com/us/app/buzzhive-ai/id6759637642`
 
-To add an **App Store QR code**: generate a QR code that encodes this URL (e.g. [QR Code Generator](https://www.qr-code-generator.com/) or [GoQR](https://goqr.me/)), save it as `assets/app-store-qr.png`, and add an `<img>` where you want it on the page. When users scan it with their iPhone camera, they’ll be taken to the App Store listing.
+The **App Store QR code** is `assets/ios-app-qr-code.png`. When you replace this file, bump the cache-busting query in `index.html` (e.g. `ios-app-qr-code.png?v=2` → `?v=3`) so deployed sites and CDNs fetch the new image instead of a cached one.
 
 ## File Structure
 
