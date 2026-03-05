@@ -98,10 +98,12 @@ TTL: 3600
    - `screenshot-ask.png` - Ask AI agent feature
 4. Or update the image filenames in `index.html` if you use different names
 
-### 7. Update App Store Link
+### 7. App Store Link
 
-In `index.html`, update the App Store link:
-- The TestFlight beta link is already set: `https://testflight.apple.com/join/Wf5CjBDG`
+In `index.html`, the iOS download link is set to:
+- **App Store**: `https://apps.apple.com/us/app/buzzhive-ai/id6759637642`
+
+To add an **App Store QR code**: generate a QR code that encodes this URL (e.g. [QR Code Generator](https://www.qr-code-generator.com/) or [GoQR](https://goqr.me/)), save it as `assets/app-store-qr.png`, and add an `<img>` where you want it on the page. When users scan it with their iPhone camera, they’ll be taken to the App Store listing.
 
 ## File Structure
 
